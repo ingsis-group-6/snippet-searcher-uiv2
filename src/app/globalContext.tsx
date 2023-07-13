@@ -6,6 +6,7 @@ import {QueryClient} from '@tanstack/query-core'
 import {QueryClientProvider} from '@tanstack/react-query'
 import {OperationsContextType, OperationsProvider} from '@/data/operationsContext'
 import {FakeSnippetOperations} from '@/data/fake/fakeSnippetOperations'
+import { RealSnippetOperations } from '@/data/real/realSnippetOperations'
 
 type GlobalContextType = {
   children: ReactNode
@@ -14,7 +15,7 @@ type GlobalContextType = {
 const defaultTheme = createTheme()
 const queryClient = new QueryClient()
 const operations: OperationsContextType = {
-  snippetOperations: new FakeSnippetOperations()
+  snippetOperations: new RealSnippetOperations()
 }
 
 export const GlobalContext: FC<GlobalContextType> = ({children}) => {

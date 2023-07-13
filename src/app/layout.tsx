@@ -2,6 +2,7 @@ import './globals.css'
 import {Inter} from 'next/font/google'
 import {ReactNode} from 'react'
 import {GlobalContext} from './globalContext'
+import {UserProvider} from "@auth0/nextjs-auth0/client";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -19,7 +20,9 @@ export default function RootLayout({children}: RootLayoutProps) {
     <html lang="en">
     <body className={inter.className}>
     <GlobalContext>
-      {children}
+        <UserProvider>
+          {children}
+        </UserProvider>
     </GlobalContext>
     </body>
     </html>
