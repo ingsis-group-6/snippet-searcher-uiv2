@@ -7,7 +7,7 @@ import {SnippetFileField} from '@/app/snippets/create/snippetFileField'
 
 const TYPE_OPTIONS = [
   {
-    id: 'printscript' as SnippetType,
+    id: 'PRINTSCRIPT' as SnippetType,
     label: 'PrintScript',
   }
 ]
